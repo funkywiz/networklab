@@ -38,7 +38,7 @@ int main()
 	{
 		while(1)
 		{
-			printf(" \n\n\n    MENU\n1-concatenation\n2.Size of a string\n3.Addition\n4.Subtraction\n5.exit\n");
+			printf(" \n\n\n    MENU\n1-concatenation\n2.Size of a string\n3.Addition\n4.Subtraction\n5.exit\n6.Display answer\n");
 			recvfrom(server,buf,sizeof(buf),0,(struct sockaddr*)&clientsocket,&clen);	
 			if(strcmp(buf,"1\n")==0)
 			{
@@ -104,6 +104,14 @@ int main()
 				printf("Exiting program");
 				return 0;
 			}
+			else if(strcmp(buf,"6")==0)
+			{
+				if(strlen(buff))
+				{
+					strcpy(buf,buff);
+					sendto(server,buf,sizeof(buf),0,(struct sockaddr*)&clientsocket,clen);
+				}		
+			}
 			else
 			{		
 				printf("Enter a valid input");
@@ -124,4 +132,3 @@ int main()
 	return 0;
 
 }
-
