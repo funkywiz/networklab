@@ -18,6 +18,13 @@ csize=sizeof(client);
 	printf("\nEnter any message to client.. :\n");
 	do{
 	scanf("%s",buf);
+	if(strcmp(buf,"6")==0)
+	{
+		sendto(client,buf,sizeof(buf),0,(struct sockaddr *)&clientaddr,sizeof(clientaddr));
+		recvfrom(client,buf,sizeof(buf),0,(struct sockaddr *)&clientaddr,&csize);
+		printf("%s",buf);
+		continue;
+	}
 	strcat(buf,"\n");
 	sendto(client,buf,sizeof(buf),0,(struct sockaddr *)&clientaddr,sizeof(clientaddr));
 	}while(strcmp(buf,"end")!=0);
