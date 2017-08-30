@@ -1,0 +1,8 @@
+www.pavithran.com 80.120.52.20
+www.pav.com 92.168.10.7
+www.pavii.com 12.188.0.16
+www.pavithran.blogspot.com 26.12.3.201
+www.google.com 55.548.164.264
+www.yahoo.com 10.165.48.65
+www.yahoo.co.in 54.665.145.84
+
